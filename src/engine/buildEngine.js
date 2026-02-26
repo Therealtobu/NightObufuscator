@@ -1,21 +1,24 @@
+const parse = require("./parser");
+const detect = require("./coreDetector");
+const vmCompile = require("./vmCompiler");
+const vmRuntime = require("./vmRuntime");
 const rename = require("./rename");
 const stringEncrypt = require("./stringEncrypt");
-const vmCompiler = require("./vmCompiler");
-const coreDetector = require("./coreDetector");
+const luacodegen = require("luacodegen");
 
 module.exports = function(code){
 
-  const ast = require("./parser")(code);
+  const ast = parse(code);
 
-  const core = coreDetector(ast);
+  const cores = detect(ast);
 
-  if(core){
-    vmCompiler(ast, core);
+  if(cores.length>0){
+    vmCompile(ast, cores);
+    vmRuntime(ast);
   }
 
   rename(ast);
   stringEncrypt(ast);
 
-  const luacodegen = require("luacodegen");
-  return "-- Obfuscated\n" + luacodegen.generate(ast);
+  return "-- OBFUSCATED\n" + luacodegen.generate(ast);
 };
