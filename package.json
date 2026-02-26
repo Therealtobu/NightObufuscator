@@ -1,0 +1,13 @@
+{
+  "name": "lua-vm-obfus-bot",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.13.0",
+    "luaparse": "^0.3.1",
+    "luacodegen": "^1.0.5"
+  }
+}
