@@ -35,7 +35,8 @@
 </p>
 
 ---
-**Hercules** is a powerful Lua obfuscator designed to make your Lua code _nearly_ impossible to reverse-engineer. With multiple layers of advanced obfuscation techniques, Hercules ensures your scripts are secure from prying eyes.
+Night Obfuscator
+Night is a lightweight and efficient Lua obfuscator designed to protect source code from being easily read, modified, or reverse-engineered. It focuses on simplicity, performance, and practical code protection without unnecessary overhead.
 <br>
 <br>
 If you decide to use/fork Hercules, please do **star it** to show support. It helps out a ton!
